@@ -3,7 +3,7 @@
 
 # NB! Set your site's url, otherwise stuff will break :)
 
-url: "https://jaden71.github.io"
+url: "https://jadenyjw.github.io"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
@@ -31,7 +31,7 @@ force-https: True
 lang: "en"
 author: "Jaden Wang"
 title: "[ Jaden Wang ]"
-description: "Jaden Wang's personal website. A little bit of information and cool blogging!"
+description: "Jaden Wang's personal website. A little bit of information and zesty blogging!"
 keywords: "jaden, wang, information security, tech, github"
 favicon: "/img/favicon.ico"
 404-img: "/img/labtocat.png"
