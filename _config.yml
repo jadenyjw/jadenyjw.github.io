@@ -3,7 +3,7 @@
 
 # NB! Set your site's url, otherwise stuff will break :)
 
-url: "https://jadenyjw.github.io"
+url: "https://panossakkos.github.io"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
@@ -12,7 +12,7 @@ url: "https://jadenyjw.github.io"
 #
 # NB! Without this *nothing* will work, because it's used in every path :)
 
-baseurl: /jadenyjw.github.io
+baseurl: /personal-jekyll-theme
 
 # Google tracking id to track your visitors
 
@@ -29,10 +29,10 @@ force-https: True
 #############
 
 lang: "en"
-author: "Jaden Wang"
-title: "[ Jaden Wang ]"
-description: "Jaden Wang's personal website. A little bit of information and zesty blogging!"
-keywords: "jaden, wang, information security, tech, github"
+author: "John Smith"
+title: "{ John Smith }"
+description: "Blog and website of John Smith, blogging mainly for tech. Opinions expressed are mine."
+keywords: "smith, jones, personal, jekyll, theme"
 favicon: "/img/favicon.ico"
 404-img: "/img/labtocat.png"
 
@@ -42,7 +42,7 @@ favicon: "/img/favicon.ico"
 
 black-favicon: "/img/black-lab-glass.ico"
 
-background-img: "../img/bg-image.jpg"
+background-img: "../img/intro-bg.jpg"
 
 ##############################
 # Dynamic Text on the Header #
@@ -59,7 +59,7 @@ lines: # You can add HTML Tags in the Text
   - text: "The lower you fall, the higher you'll fly."
   - text: "Where’s your will to be weird?"
 
-me-img: "/img/profile.png"
+me-img: "/img/jetpacktocat.png"
 
 ################
 # Web app mode #
@@ -95,7 +95,7 @@ pinterest-share: True
 pocket-share: True
 vkontakte-share: True
 
-disqus-shortname: "jadenwang"
+disqus-shortname: "panossakkos"
 
 syntax-highlight: True
 
@@ -119,7 +119,7 @@ timeline-img: "/img/timeline/default.png"
 # Contact #
 ###########
 
-email: "jadenyjw@gmail.com"
+email: "your@email.here"
 
 ##################
 # Social Buttons #
@@ -131,8 +131,11 @@ social:
   - title: "twitter"
     url: "https://twitter.com/"
   - title: "github"
-    url: "https://github.com/jaden71"
-  
+    url: "https://github.com/PanosSakkos/personal-jekyll-theme"
+  - title: "bitcoin"
+    url: "https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi"
+  - title: "rss"
+    url: "/feed.xml"
 
 ############
 # 404 page #
