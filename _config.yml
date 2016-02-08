@@ -57,7 +57,8 @@ start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
   - text: "The lower you fall, the higher you'll fly."
-  - text: "Where’s your will to be weird?"
+  - text: "True wisdom is knowing what you don't know."
+  - text: "If opportunity doesn’t knock, build a door."
 
 me-img: "/img/profile.png"
 
