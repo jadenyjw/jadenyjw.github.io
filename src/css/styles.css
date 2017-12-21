@@ -14,15 +14,19 @@ body {
 }
 
 .hostname {
-  color: #859900
+  color: #859900;
 }
 
 .directory {
+  color: 	#b58900;
+}
 
+.dollar {
+  color: #dc322f;
 }
 
 .at {
-  color: #eee8d5
+  color: #eee8d5;
 
 }
 
