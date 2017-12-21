@@ -4,7 +4,7 @@ body {
   overflow:hidden;
 }
 
-.container-fluid{
+#terminal{
   margin: 2%;
 
 }
@@ -31,5 +31,14 @@ body {
 }
 
 .default{
+
+}
+
+.trans {
+  background-color: transparent;
+  border: none;
+  outline:none;
+  color: #fdf6e3;
+  width: 90%
 
 }
