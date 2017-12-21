@@ -8,7 +8,7 @@ var command = ""
 const HELP_STR =
 `jsh commands: <br>
   ls - list directories and files. <br>
-  cat <file> - open a specific file. <br>`;
+  cat &lt;file&gt; - open a specific file. <br>`;
 
 const DONATE_STR =
 `If you like what I do, please consider donating. <br>
