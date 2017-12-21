@@ -26,7 +26,7 @@ const RESET_STR =
   &nbsp; <span class="at"> in </span> &nbsp; <span class="directory"> ~ </span>
 </div>
 <div class="row">
-  <span class="dollar"> $ </span> &nbsp; <input type="text" class="trans" id="line" autocapitalize="none">
+  <span class="dollar"> $ </span> &nbsp; <input type="email" class="trans" id="line" autocorrect="off" autocapitalize="none">
 </div>`
 
 const LS_STR = "email github linkedin devpost resume donate"
