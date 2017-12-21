@@ -33,7 +33,8 @@ const LS_STR = "email github linkedin devpost resume donate"
 
 const UNKNOWN_COMMAND_STR = "jsh: command not found: ";
 
-const NO_FILE_STR = "File not found."
+const NO_FILE_STR = ": No such file or directory"
+
 
 $(document).ready(function(){
     window.addEventListener("keypress", eventHandler, false);
@@ -74,7 +75,7 @@ function processCommand(command){
         $("#terminal").append('<div class="row"> <span class="default"> ' + DONATE_STR + '</span></div>');
       }
       else{
-        $("#terminal").append('<div class="row"> <span class="default"> ' + NO_FILE_STR + '</span></div>');
+        $("#terminal").append('<div class="row"> <span class="default"> ' + "cat: " + file + NO_FILE_STR + '</span></div>');
       }
     }
 
