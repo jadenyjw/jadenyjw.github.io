@@ -70,7 +70,7 @@ function processCommand(command){
         $("#terminal").append('<div class="row"> <span class="default"> ' + DEVPOST_LINK + '</span></div>');
       }
       else if (file == "resume"){
-        window.location.href = RESUME_LINK;
+        window.open(RESUME_LINK, '_blank');;
       }
       else if (file == "donate"){
         $("#terminal").append('<div class="row"> <span class="default"> ' + DONATE_STR + '</span></div>');
