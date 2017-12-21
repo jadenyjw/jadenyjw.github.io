@@ -1,3 +1,31 @@
 body {
   background-color: #073642;
+  font-family: 'Roboto Mono', monospace;
+  overflow:hidden;
+}
+
+.container-fluid{
+  margin: 2%;
+
+}
+
+.username {
+  color: #268bd2;
+}
+
+.hostname {
+  color: #859900
+}
+
+.directory {
+
+}
+
+.at {
+  color: #eee8d5
+
+}
+
+.default{
+
 }
