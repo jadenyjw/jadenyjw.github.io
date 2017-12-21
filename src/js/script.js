@@ -8,7 +8,8 @@ var command = ""
 const HELP_STR =
 `jsh commands: <br>
   ls - list directories and files. <br>
-  cat &lt;file&gt; - open a specific file. <br>`;
+  cat &lt;file&gt; - open a specific file. <br>
+  clear - clear the text on screen`;
 
 const DONATE_STR =
 `If you like what I do, please consider donating. <br>
@@ -86,6 +87,8 @@ function processCommand(command){
   else if (parentCommand == "help"){
     $("#terminal").append('<div class="row"> <span class="default"> ' + HELP_STR + '</span></div>');
   }
+
+
   else{
     if (parentCommand != ""){
       $("#terminal").append('<div class="row"> <span class="default"> ' + UNKNOWN_COMMAND_STR + " " + parentCommand + '</span></div>');
@@ -95,6 +98,15 @@ function processCommand(command){
   $('#line').attr('id', 'old');
   $("#terminal").append('<br>');
   $("#terminal").append(RESET_STR);
+  if (parentCommand == "clear"){
+    var children = $('#terminal').children();
+
+    for(var x = 2; x < children.length; x++){
+      children[x].remove();
+    }
+    $("#terminal").append('<div class="row"> <span class="dollar"> $ </span> &nbsp; <input type="email" class="trans" id="line" autocorrect="off" autocapitalize="none"></div>')
+  }
+
 
   document.getElementById('line').focus();
 };
