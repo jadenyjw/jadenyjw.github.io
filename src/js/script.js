@@ -5,13 +5,18 @@ const RESUME_LINK = "resume.pdf"
 var current_dir = "~"
 var command = ""
 
+const HELP_STR =
+`jsh commands:\n
+ ls - list directories and files.\n
+ cd - change into a directory.\n `;
 
 $(document).ready(function(){
-    window.addEventListener("keypress", myEventHandler, false);
+    window.addEventListener("keypress", eventHandler, false);
     document.getElementById('line').focus();
 });
 
-function myEventHandler(e){
+function eventHandler(e){
+    document.getElementById('line').focus();
     var keyCode = e.keyCode;
     console.log(keyCode);
     if(keyCode == 13){
@@ -20,5 +25,5 @@ function myEventHandler(e){
 };
 
 function processCommand(command){
-
+  
 };
