@@ -21,13 +21,16 @@ body {
   color: 	#b58900;
 }
 
+.ls {
+  color: #2aa198
+}
+
 .dollar {
   color: #dc322f;
 }
 
 .at {
   color: #eee8d5;
-
 }
 
 .default{
@@ -40,5 +43,4 @@ body {
   outline:none;
   color: #fdf6e3;
   width: 90%
-
 }

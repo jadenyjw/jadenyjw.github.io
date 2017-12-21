@@ -1,13 +1,14 @@
 const GITHUB_LINK = "https://github.com/jadenyjw"
 const LINKEDIN_LINK = "https://linkedin.com/in/jadenyjw/"
 const EMAIL_ADDRESS ="jadenyjw@gmail.com"
+const DEVPOST_LINK = "devpost.com/jadenyjw"
 const RESUME_LINK = "resume.pdf"
 var command = ""
 
 const HELP_STR =
 `jsh commands: <br>
   ls - list directories and files. <br>
-  get - fetch a specific file/link. <br>`;
+  cat <file> - open a specific file. <br>`;
 
 const DONATE_STR =
 `If you like what I do, please consider donating. <br>
@@ -28,7 +29,11 @@ const RESET_STR =
   <span class="dollar"> $ </span> &nbsp; <input type="text" class="trans" id="line" autocapitalize="none">
 </div>`
 
+const LS_STR = "email github linkedin devpost resume donate"
+
 const UNKNOWN_COMMAND_STR = "jsh: command not found: ";
+
+const NO_FILE_STR = "File not found."
 
 $(document).ready(function(){
     window.addEventListener("keypress", eventHandler, false);
@@ -47,11 +52,35 @@ function processCommand(command){
   commandParsed = command.split(" ");
   parentCommand = commandParsed[0]
 
-  if (parentCommand == "get"){
+  if (parentCommand == "cat"){
+    if(commandParsed.length >= 2){
+      file = commandParsed[1];
+      if(file == "github"){
+        $("#terminal").append('<div class="row"> <span class="default"> ' + GITHUB_LINK + '</span></div>');
+      }
+      else if (file == "email"){
+        $("#terminal").append('<div class="row"> <span class="default"> ' + EMAIL_ADDRESS + '</span></div>');
+      }
+      else if (file == "linkedin"){
+        $("#terminal").append('<div class="row"> <span class="default"> ' + LINKEDIN_LINK + '</span></div>');
+      }
+      else if (file == "devpost"){
+        $("#terminal").append('<div class="row"> <span class="default"> ' + DEVPOST_LINK + '</span></div>');
+      }
+      else if (file == "resume"){
+        window.location.href = RESUME_LINK;
+      }
+      else if (file == "donate"){
+        $("#terminal").append('<div class="row"> <span class="default"> ' + DONATE_STR + '</span></div>');
+      }
+      else{
+        $("#terminal").append('<div class="row"> <span class="default"> ' + NO_FILE_STR + '</span></div>');
+      }
+    }
 
   }
   else if (parentCommand == "ls"){
-
+    $("#terminal").append('<div class="row"> <span class="ls"> ' + LS_STR + '</span></div>');
   }
   else if (parentCommand == "help"){
     $("#terminal").append('<div class="row"> <span class="default"> ' + HELP_STR + '</span></div>');
