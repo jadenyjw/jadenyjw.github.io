@@ -28,6 +28,8 @@ const RESET_STR =
   <span class="dollar"> $ </span> &nbsp; <input type="text" class="trans" id="line" autocapitalize="none">
 </div>`
 
+const UNKNOWN_COMMAND_STR = "jsh: command not found: ";
+
 $(document).ready(function(){
     window.addEventListener("keypress", eventHandler, false);
     document.getElementById('line').focus();
@@ -53,12 +55,16 @@ function processCommand(command){
   }
   else if (parentCommand == "help"){
     $("#terminal").append('<div class="row"> <span class="default"> ' + HELP_STR + '</span></div>');
-    $( "#line" ).prop( "disabled", true );
-    $('#line').attr('id', 'old');
-    $("#terminal").append(RESET_STR);
   }
   else{
-
+    if (parentCommand != ""){
+      $("#terminal").append('<div class="row"> <span class="default"> ' + UNKNOWN_COMMAND_STR + " " + parentCommand + '</span></div>');
+    }
   }
+  $( "#line" ).prop( "disabled", true );
+  $('#line').attr('id', 'old');
+  $("#terminal").append('<br>');
+  $("#terminal").append(RESET_STR);
+
   document.getElementById('line').focus();
 };
