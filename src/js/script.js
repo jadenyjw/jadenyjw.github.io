@@ -1,7 +1,7 @@
 const GITHUB_LINK = "https://github.com/jadenyjw"
 const LINKEDIN_LINK = "https://linkedin.com/in/jadenyjw/"
+const DEVPOST_LINK = "https://devpost.com/jadenyjw"
 const EMAIL_ADDRESS ="jadenyjw@gmail.com"
-const DEVPOST_LINK = "devpost.com/jadenyjw"
 const RESUME_LINK = "resume.pdf"
 var command = ""
 
