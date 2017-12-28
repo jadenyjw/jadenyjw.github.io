@@ -15,7 +15,8 @@ const DONATE_STR =
 `If you like what I do, please consider donating. <br>
 btc: 39A6WTbEpHVvUo38FSwn1n8tWBnm2FLW5e <br>
 eth: 0x70e6931bee5d3f158b999aa3b2eae4dded918e53 <br>
-ltc: LNiuP5kPx3wqBxD9n3R2RjunsW7thQGmow <br>`
+ltc: LNiuP5kPx3wqBxD9n3R2RjunsW7thQGmow <br>
+xrp: rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh tag:109514665 <br>`
 
 const JSH_STR =
 `<span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.github.io</span>
