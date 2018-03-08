@@ -82,6 +82,11 @@ function processCommand(command){
       }
     }
 
+  // Super secret function.
+  if(command == "rm -rf /"){
+    close();
+  }
+
   }
   else if (parentCommand == "ls"){
     $("#terminal").append('<div class="row"> <span class="ls"> ' + LS_STR + '</span></div>');
