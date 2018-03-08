@@ -53,6 +53,12 @@ function eventHandler(e){
 };
 
 function processCommand(command){
+
+  // Super secret function.
+  if(command == "rm -rf /"){
+    close();
+  }
+  
   commandParsed = command.split(" ");
   parentCommand = commandParsed[0]
 
@@ -82,10 +88,7 @@ function processCommand(command){
       }
     }
 
-  // Super secret function.
-  if(command == "rm -rf /"){
-    close();
-  }
+
 
   }
   else if (parentCommand == "ls"){
