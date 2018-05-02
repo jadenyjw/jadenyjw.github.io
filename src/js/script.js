@@ -5,6 +5,17 @@ const EMAIL_ADDRESS ="jadenyjw@gmail.com, jaden.wang@mail.utoronto.ca"
 const RESUME_LINK = "resume.pdf"
 var command = ""
 
+var PAC_COUNT = 0
+
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.onreadystatechange = function() {
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+        PAC_COUNT = xmlHttp.responseText;
+}
+xmlHttp.open("GET", "http://stats.jadenyjw.ml/pacman", true); // true for asynchronous
+xmlHttp.send(null);
+
+
 const HELP_STR =
 `jsh commands: <br>
   ls - list directories and files. <br>
@@ -19,6 +30,9 @@ ltc: LNiuP5kPx3wqBxD9n3R2RjunsW7thQGmow <br>
 xrp: rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh tag:109514665 <br>
 grlc: GfT5tBDrKEVpAw4oDEjXGMkx4anqDr3R4u <br>`
 
+const ABOUT_STR =
+`I'm Jaden Wang, a current student at the University of Toronto Scarborough Campus.`
+
 const JSH_STR =
 `<span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.github.io</span>
 &nbsp; <span class="at"> in </span> &nbsp; <span class="directory"> ~ </span>`
@@ -32,7 +46,7 @@ const RESET_STR =
   <span class="dollar"> $ </span> &nbsp; <input type="email" class="trans" id="line" autocorrect="off" autocapitalize="none">
 </div>`
 
-const LS_STR = "email github linkedin devpost resume donate"
+const LS_STR = "about email github linkedin devpost resume donate"
 
 const UNKNOWN_COMMAND_STR = "jsh: command not found: ";
 
@@ -58,7 +72,7 @@ function processCommand(command){
   if(command == "rm -rf /"){
     close();
   }
-  
+
   commandParsed = command.split(" ");
   parentCommand = commandParsed[0]
 
@@ -67,6 +81,9 @@ function processCommand(command){
       file = commandParsed[1];
       if(file == "github"){
         $("#terminal").append('<div class="row"> <span class="default"> ' + GITHUB_LINK + '</span></div>');
+      }
+      else if (file == "about"){
+        $("#terminal").append('<div class="row"> <span class="default"> ' + ABOUT_STR + '</span></div>');
       }
       else if (file == "email"){
         $("#terminal").append('<div class="row"> <span class="default"> ' + EMAIL_ADDRESS + '</span></div>');
@@ -97,7 +114,6 @@ function processCommand(command){
   else if (parentCommand == "help"){
     $("#terminal").append('<div class="row"> <span class="default"> ' + HELP_STR + '</span></div>');
   }
-
 
   else{
     if (parentCommand != ""){
