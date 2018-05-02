@@ -6,12 +6,13 @@ const RESUME_LINK = "resume.pdf"
 var command = ""
 
 var PAC_COUNT = 0
+var PACMAN_STR = ""
 
 var xmlHttp = new XMLHttpRequest();
 xmlHttp.onreadystatechange = function() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
         PAC_COUNT = xmlHttp.responseText;
-        alert(PAC_COUNT);
+        PACMAN_STR = "As of this week, I've ran pacman -Syu " + PAC_COUNT + " times."
 }
 xmlHttp.open("GET", "https://stats.jadenyjw.ml/pacman", true); // true for asynchronous
 xmlHttp.send(null);
@@ -84,7 +85,7 @@ function processCommand(command){
         $("#terminal").append('<div class="row"> <span class="default"> ' + GITHUB_LINK + '</span></div>');
       }
       else if (file == "about"){
-        $("#terminal").append('<div class="row"> <span class="default"> ' + ABOUT_STR + '</span></div>');
+        $("#terminal").append('<div class="row"> <span class="default"> ' + ABOUT_STR + " " + PACMAN_STR + '</span></div>');
       }
       else if (file == "email"){
         $("#terminal").append('<div class="row"> <span class="default"> ' + EMAIL_ADDRESS + '</span></div>');
