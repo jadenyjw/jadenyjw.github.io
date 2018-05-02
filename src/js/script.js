@@ -11,8 +11,9 @@ var xmlHttp = new XMLHttpRequest();
 xmlHttp.onreadystatechange = function() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
         PAC_COUNT = xmlHttp.responseText;
+        alert(PAC_COUNT);
 }
-xmlHttp.open("GET", "http://stats.jadenyjw.ml/pacman", true); // true for asynchronous
+xmlHttp.open("GET", "https://stats.jadenyjw.ml/pacman", true); // true for asynchronous
 xmlHttp.send(null);
 
 
