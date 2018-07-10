@@ -30,7 +30,8 @@ btc: 39A6WTbEpHVvUo38FSwn1n8tWBnm2FLW5e <br>
 eth: 0x70e6931bee5d3f158b999aa3b2eae4dded918e53 <br>
 ltc: LNiuP5kPx3wqBxD9n3R2RjunsW7thQGmow <br>
 xrp: rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh tag:109514665 <br>
-grlc: GfT5tBDrKEVpAw4oDEjXGMkx4anqDr3R4u <br>`
+grlc: GfT5tBDrKEVpAw4oDEjXGMkx4anqDr3R4u <br>
+ppl: paypal.me/jadenyjw`
 
 const ABOUT_STR =
 `I'm Jaden Wang, a current student at the University of Toronto Scarborough Campus.`
