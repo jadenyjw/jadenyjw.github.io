@@ -1,7 +1,7 @@
 body {
   background-color: #073642;
   font-family: 'Roboto Mono', monospace;
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
 #terminal{
