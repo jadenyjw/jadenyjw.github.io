@@ -34,7 +34,7 @@ grlc: GfT5tBDrKEVpAw4oDEjXGMkx4anqDr3R4u <br>
 ppl: paypal.me/jadenyjw`
 
 const ABOUT_STR =
-`I'm Jaden Wang, a current student at the University of Toronto Scarborough Campus.`
+`I'm Jaden Wang, a current Software Engineering specialist and Statistics major at the University of Toronto Scarborough Campus.`
 
 const JSH_STR =
 `<span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.github.io</span>
