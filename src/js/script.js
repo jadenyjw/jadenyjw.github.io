@@ -83,7 +83,7 @@ function processCommand(command){
     if(commandParsed.length >= 2){
       file = commandParsed[1];
       if(file == "github"){
-        $("#terminal").append('<div class="row"> <span class="default"> ' + GITHUB_LINK + '</span></div>');
+        $("#terminal").append('<div class="row"> <span class="default"><a href="' + GITHUB_LINK + '">' + GITHUB_LINK + '</a></span></div>');
       }
       else if (file == "about"){
         $("#terminal").append('<div class="row"> <span class="default"> ' + ABOUT_STR + " " + PACMAN_STR + '</span></div>');
@@ -92,10 +92,10 @@ function processCommand(command){
         $("#terminal").append('<div class="row"> <span class="default"> ' + EMAIL_ADDRESS + '</span></div>');
       }
       else if (file == "linkedin"){
-        $("#terminal").append('<div class="row"> <span class="default"> ' + LINKEDIN_LINK + '</span></div>');
+        $("#terminal").append('<div class="row"> <span class="default"><a href="' + LINKEDIN_LINK + '">' + LINKEDIN_LINK + '</a></span></div>');
       }
       else if (file == "devpost"){
-        $("#terminal").append('<div class="row"> <span class="default"> ' + DEVPOST_LINK + '</span></div>');
+        $("#terminal").append('<div class="row"> <span class="default"><a href="' + DEVPOST_LINK + '">' + DEVPOST_LINK + '</a></span></div>');
       }
       else if (file == "resume"){
         window.open(RESUME_LINK, '_blank');;
