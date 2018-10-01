@@ -37,7 +37,7 @@ const ABOUT_STR =
 `I'm Jaden Wang, a current Software Engineering specialist and Statistics major at the University of Toronto Scarborough Campus.`
 
 const JSH_STR =
-`<span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.github.io</span>
+`<span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.ml</span>
 &nbsp; <span class="at"> in </span> &nbsp; <span class="directory"> ~ </span>`
 
 const RESET_STR =
