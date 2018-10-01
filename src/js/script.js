@@ -42,7 +42,7 @@ const JSH_STR =
 
 const RESET_STR =
 `<div class="row">
-  <span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.github.io</span>
+  <span class="username">jaden</span> &nbsp; <span class="at"> @ </span> &nbsp; <span class="hostname">jadenyjw.ml</span>
   &nbsp; <span class="at"> in </span> &nbsp; <span class="directory"> ~ </span>
 </div>
 <div class="row">
