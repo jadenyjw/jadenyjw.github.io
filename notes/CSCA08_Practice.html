@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSCA08</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="csca08-practice-questions">CSCA08 Practice Questions</h1>
+<h3 id="question-1.">Question 1.</h3>
+<p>Tim wants to gain some insight on his text files. He also <em>loves</em> dictionaries (the Oxford dictionary kind). To learn more about his files, he used his CSCA08 knowledge to create a program that creates an English dictionary of starting characters and lists of lowercase words that start with those characters, sorted in alphabetical order. He then later saves that file into the format as mentioned below, overwriting the file if it was already existent:</p>
+<p><strong>Input File:</strong></p>
+<pre><code>a quick brown Fox
+jumped over
+the lazy Teaching Assistant
+</code></pre>
+<p><strong>Output File:</strong></p>
+<pre><code>A
+a
+assistant
+
+B
+brown
+
+F
+fox
+
+J
+jumped
+
+L
+lazy
+
+O
+over
+
+Q
+quick
+
+T
+teaching
+the
+</code></pre>
+<p>Unfortunately, the <em>Code Stealer</em> struck! He deleted multiple lines of Tim’s original code, and replaced them with instances of <code># STOLEN</code>. Luckily, he was unable to delete a few remaining lines.</p>
+<p>Based off of the remaining code, help Tim recover his code below:<br>
+<em>You may assume that the text files will only contain characters from the alphabet.</em></p>
+<pre class=" language-python"><code class="prism  language-python">char_to_words <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+input_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"input.txt"</span><span class="token punctuation">,</span> <span class="token comment"># STOLEN)</span>
+
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token comment"># STOLEN:</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        first_char <span class="token operator">=</span> <span class="token comment"># STOLEN</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> first_char <span class="token keyword">in</span> char_to_words<span class="token punctuation">:</span>
+            <span class="token comment"># STOLEN</span>
+        <span class="token comment"># STOLEN</span>
+
+<span class="token comment"># STOLEN</span>
+
+output_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"output.txt"</span><span class="token punctuation">,</span> <span class="token comment"># STOLEN)</span>
+
+<span class="token comment"># sorted() returns a sorted list of its keys</span>
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span><span class="token comment"># STOLEN):</span>
+    <span class="token comment"># STOLEN</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">[</span><span class="token comment"># STOLEN]):</span>
+        <span class="token comment"># STOLEN</span>
+    <span class="token comment"># STOLEN</span>
+
+<span class="token comment"># STOLEN</span>
+
+</code></pre>
+<p><strong>Solution:</strong></p>
+<pre class=" language-python"><code class="prism  language-python">char_to_words <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+input_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"input.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> line <span class="token keyword">in</span> input_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        first_char <span class="token operator">=</span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> first_char <span class="token keyword">in</span> char_to_words<span class="token punctuation">:</span>
+            char_to_words<span class="token punctuation">[</span>first_char<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+        char_to_words<span class="token punctuation">[</span>first_char<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>word<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        
+input_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+output_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"output.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>letter<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">[</span>letter<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>word<span class="token operator">+</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+    output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+
+output_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="question-2">Question 2:</h3>
+<p>Robert created a <code>unittest</code> to test a function that he wrote. The function should determine whether or not a set contained given elements using the following snippet of code:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># Function</span>
+<span class="token keyword">def</span> <span class="token function">set_equal</span><span class="token punctuation">(</span>in_set<span class="token punctuation">,</span> content<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	output <span class="token operator">=</span> <span class="token string">""</span>
+	<span class="token keyword">for</span> element <span class="token keyword">in</span> in_set<span class="token punctuation">:</span>
+		output <span class="token operator">+=</span> element	
+	<span class="token keyword">return</span> output <span class="token operator">==</span> content
+</code></pre>
+<p>The <code>unittest</code> that he made was:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token comment"># In unittest file.</span>
+<span class="token keyword">def</span> <span class="token function">test_equal</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	self<span class="token punctuation">.</span>assertTrue<span class="token punctuation">(</span>set_equal<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'ABCD'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Does this code work as intended? Why or why not?</p>
+<p><strong>Solution</strong><br>
+No, this code does not work. The fact that this is a <code>unittest</code> is irrelevant. Sets are an unordered data type so looping through does not guarantee that the “order” will be the same as how the set was defined.</p>
+<h3 id="question-3">Question 3:</h3>
+<p>Anya and her team of TAs host regular office hours this semester. For convenience, Anya wrote a program to return the name of a TA that was available at a given time. If multiple TAs are available at that time, then Anya wants to assign the session to the TA that has the least available sessions. If any of those TAs have the same amount of sessions, then returning any of those TAs are fine.</p>
+<p>She wrote a function called <code>ta_to_assign</code> that uses two helper functions called <code>get_available_tas</code> and <code>get_ta_least_sessions</code>.</p>
+<p><strong>Example</strong></p>
+<pre class=" language-python"><code class="prism  language-python">ta_to_assign<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"Jaden"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Dec 1, 7:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Tim"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Dec 1, 7:00"</span><span class="token punctuation">,</span> <span class="token string">"Dec 1, 8:00"</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">"Dec 1, 7:00"</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'Jaden'</span>
+</code></pre>
+<p>Right after writing her program and leaving to host office hours, the <em>Code Mangler struck!</em> He <strong>scrambled all of the lines</strong> in the program, <strong>removed all the indentation</strong>, and <strong>added some unnecessary lines</strong> as well.</p>
+<p>Fortunately, she remembers the description of each function:</p>
+<pre><code>ta_to_assign: 
+Returns a string representing the name of a TA from ta_to_time that has an identical session as time and has the least amount of available sessions.
+
+get_available_tas: 
+Return a set of TAs that have time as an available session.
+
+get_ta_least_sessions: 
+Return the name of a TA from available_tas that has the least available sessions.
+</code></pre>
+<p>Your task is to recreate her program, using the lines of scrambled code below.</p>
+<p><em>You may assume that all times will be formatted in the same way.<br>
+You may also assume that there will always be a TA available at any given time. (Yes, the TAs are very hardworking!)</em></p>
+<p><strong>Scrambled Code</strong></p>
+<pre class=" language-python"><code class="prism  language-python">available_tas<span class="token punctuation">.</span>add<span class="token punctuation">(</span>ta<span class="token punctuation">)</span>
+available_tas <span class="token operator">=</span> get_available_tas<span class="token punctuation">(</span>ta_to_time<span class="token punctuation">,</span> time<span class="token punctuation">)</span>
+min_sessions <span class="token operator">=</span> sessions
+min_ta <span class="token operator">=</span> ta
+i <span class="token operator">=</span> <span class="token number">0</span>
+i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>sessions <span class="token operator">&lt;</span> min_sessions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>sessions <span class="token operator">&gt;</span> min_sessions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>time <span class="token keyword">in</span> times<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">not</span> time <span class="token keyword">in</span> times<span class="token punctuation">)</span><span class="token punctuation">:</span>
+sessions <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">[</span>ta<span class="token punctuation">]</span><span class="token punctuation">)</span>
+times <span class="token operator">=</span> ta_to_time<span class="token punctuation">[</span>ta<span class="token punctuation">]</span>
+available_tas <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> ta <span class="token keyword">in</span> available_tas<span class="token punctuation">:</span>
+<span class="token keyword">for</span> ta <span class="token keyword">in</span> ta_to_time<span class="token punctuation">:</span>
+min_sessions <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
+min_sessions <span class="token operator">=</span> <span class="token number">0</span>
+min_ta <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token keyword">return</span> available_tas
+<span class="token keyword">return</span> min_ta
+<span class="token keyword">return</span> ta
+<span class="token keyword">return</span> get_ta_least_sessions<span class="token punctuation">(</span>available_tas<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">get_available_tas</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> time<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">set</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">get_ta_least_sessions</span><span class="token punctuation">(</span>available_tas<span class="token punctuation">:</span> <span class="token builtin">set</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">ta_to_assign</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> time<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+</code></pre>
+<p><strong>Solution:</strong></p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">get_available_tas</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> time<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">set</span><span class="token punctuation">:</span>
+
+	available_tas <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">for</span> ta <span class="token keyword">in</span> ta_to_time<span class="token punctuation">:</span>
+		times <span class="token operator">=</span> ta_to_time<span class="token punctuation">[</span>ta<span class="token punctuation">]</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>time <span class="token keyword">in</span> times<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			available_tas<span class="token punctuation">.</span>add<span class="token punctuation">(</span>ta<span class="token punctuation">)</span>
+	
+	<span class="token keyword">return</span> available_tas
+			
+<span class="token keyword">def</span> <span class="token function">get_ta_least_sessions</span><span class="token punctuation">(</span>available_tas<span class="token punctuation">:</span> <span class="token builtin">set</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+
+	min_ta <span class="token operator">=</span> <span class="token string">""</span>
+	min_sessions <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">for</span> ta <span class="token keyword">in</span> available_tas<span class="token punctuation">:</span>
+		sessions <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">[</span>ta<span class="token punctuation">]</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>sessions <span class="token operator">&lt;</span> min_sessions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			min_ta <span class="token operator">=</span> ta
+			min_sessions <span class="token operator">=</span> sessions
+			
+	<span class="token keyword">return</span> min_ta
+
+<span class="token keyword">def</span> <span class="token function">ta_to_assign</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> time<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+
+	available_tas <span class="token operator">=</span> get_available_tas<span class="token punctuation">(</span>ta_to_time<span class="token punctuation">,</span> time<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> get_ta_least_sessions<span class="token punctuation">(</span>available_tas<span class="token punctuation">)</span>
+
+</code></pre>
+</div>
+</body>
+
+</html>
