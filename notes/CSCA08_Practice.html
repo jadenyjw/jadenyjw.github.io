@@ -9,8 +9,26 @@
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html"><h1 id="csca08-practice-questions">CSCA08 Practice Questions</h1>
-<h3 id="question-1.">Question 1.</h3>
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#csca08-practice-questions">CSCA08 Practice Questions</a>
+<ul>
+<li><a href="#question-1">Question 1</a></li>
+<li><a href="#question-2">Question 2</a></li>
+<li><a href="#question-3">Question 3</a></li>
+<li><a href="#solutions">Solutions</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="csca08-practice-questions">CSCA08 Practice Questions</h1>
+<h2 id="question-1">Question 1</h2>
 <p>Tim wants to gain some insight on his text files. He also <em>loves</em> dictionaries (the Oxford dictionary kind). To learn more about his files, he used his CSCA08 knowledge to create a program that creates an English dictionary of starting characters and lists of lowercase words that start with those characters, sorted in alphabetical order. He then later saves that file into the format as mentioned below, overwriting the file if it was already existent:</p>
 <p><strong>Input File:</strong></p>
 <pre><code>a quick brown Fox
@@ -71,32 +89,7 @@ output_file <span class="token operator">=</span> <span class="token builtin">op
 <span class="token comment"># STOLEN</span>
 
 </code></pre>
-<p><strong>Solution:</strong></p>
-<pre class=" language-python"><code class="prism  language-python">char_to_words <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-input_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"input.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">for</span> line <span class="token keyword">in</span> input_file<span class="token punctuation">:</span>
-    <span class="token keyword">for</span> word <span class="token keyword">in</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        first_char <span class="token operator">=</span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> first_char <span class="token keyword">in</span> char_to_words<span class="token punctuation">:</span>
-            char_to_words<span class="token punctuation">[</span>first_char<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-        char_to_words<span class="token punctuation">[</span>first_char<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>word<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        
-input_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-output_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"output.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>letter<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> word <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">[</span>letter<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>word<span class="token operator">+</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
-    output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
-
-output_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<h3 id="question-2">Question 2:</h3>
+<h2 id="question-2">Question 2</h2>
 <p>Robert created a <code>unittest</code> to test a function that he wrote. The function should determine whether or not a set contained given elements using the following snippet of code:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token comment"># Function</span>
 <span class="token keyword">def</span> <span class="token function">set_equal</span><span class="token punctuation">(</span>in_set<span class="token punctuation">,</span> content<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -108,12 +101,10 @@ output_file<span class="token punctuation">.</span>close<span class="token punct
 <p>The <code>unittest</code> that he made was:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token comment"># In unittest file.</span>
 <span class="token keyword">def</span> <span class="token function">test_equal</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-	self<span class="token punctuation">.</span>assertTrue<span class="token punctuation">(</span>set_equal<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'ABCD'</span><span class="token punctuation">)</span>
+	self<span class="token punctuation">.</span>assertTrue<span class="token punctuation">(</span>set_equal<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'ABCD'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p>Does this code work as intended? Why or why not?</p>
-<p><strong>Solution</strong><br>
-No, this code does not work. The fact that this is a <code>unittest</code> is irrelevant. Sets are an unordered data type so looping through does not guarantee that the “order” will be the same as how the set was defined.</p>
-<h3 id="question-3">Question 3:</h3>
+<h2 id="question-3">Question 3</h2>
 <p>Anya and her team of TAs host regular office hours this semester. For convenience, Anya wrote a program to return the name of a TA that was available at a given time. If multiple TAs are available at that time, then Anya wants to assign the session to the TA that has the least available sessions. If any of those TAs have the same amount of sessions, then returning any of those TAs are fine.</p>
 <p>She wrote a function called <code>ta_to_assign</code> that uses two helper functions called <code>get_available_tas</code> and <code>get_ta_least_sessions</code>.</p>
 <p><strong>Example</strong></p>
@@ -161,7 +152,35 @@ min_ta <span class="token operator">=</span> <span class="token string">""</span
 <span class="token keyword">def</span> <span class="token function">get_ta_least_sessions</span><span class="token punctuation">(</span>available_tas<span class="token punctuation">:</span> <span class="token builtin">set</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
 <span class="token keyword">def</span> <span class="token function">ta_to_assign</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> time<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
 </code></pre>
-<p><strong>Solution:</strong></p>
+<h2 id="solutions">Solutions</h2>
+<p><strong>Question 1</strong></p>
+<pre class=" language-python"><code class="prism  language-python">char_to_words <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+input_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"input.txt"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> line <span class="token keyword">in</span> input_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        first_char <span class="token operator">=</span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> first_char <span class="token keyword">in</span> char_to_words<span class="token punctuation">:</span>
+            char_to_words<span class="token punctuation">[</span>first_char<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+        char_to_words<span class="token punctuation">[</span>first_char<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>word<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        
+input_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+output_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"output.txt"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>letter<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>char_to_words<span class="token punctuation">[</span>letter<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>word<span class="token operator">+</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+    output_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+
+output_file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Question 2</strong></p>
+<p>No, this code does not work. The fact that this is a <code>unittest</code> is irrelevant. Sets are an unordered data type so looping through does not guarantee that the “order” will be the same as how the set was defined.</p>
+<p><strong>Question 3</strong></p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">get_available_tas</span><span class="token punctuation">(</span>ta_to_time<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">,</span> time<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">set</span><span class="token punctuation">:</span>
 
 	available_tas <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -192,7 +211,9 @@ min_ta <span class="token operator">=</span> <span class="token string">""</span
 	<span class="token keyword">return</span> get_ta_least_sessions<span class="token punctuation">(</span>available_tas<span class="token punctuation">)</span>
 
 </code></pre>
-</div>
+
+    </div>
+  </div>
 </body>
 
 </html>
