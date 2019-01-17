@@ -89,7 +89,8 @@
 <h4 id="logical-operators">Logical Operators</h4>
 <p>Logical operators were introduced in CSCA08 with Python.</p>
 <p><code>a &amp;&amp; b</code> is equivalent to <code>a and b</code><br>
-<code>a || b</code> is equivalent to <code>a or b</code></p>
+<code>a || b</code> is equivalent to <code>a or b</code><br>
+<code>!a</code>  is equivalent to <code>not a</code></p>
 <pre class=" language-c"><code class="prism  language-c">a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>  
 b<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span>  
 c<span class="token operator">=</span>a<span class="token operator">&amp;</span>b<span class="token punctuation">;</span>
@@ -99,34 +100,33 @@ c<span class="token operator">=</span>a<span class="token operator">&amp;</span>
 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"A is 2 and b is 7\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Remember, <em>logical expressions</em> are evaluated to be <em>TRUE</em> or <em>FALSE</em>.<br>
-Which of the above are logical expressions?</p>
-<p>They are:</p>
-<pre class=" language-c"><code class="prism  language-c">a<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">;</span>
-b<span class="token operator">==</span><span class="token number">7</span><span class="token punctuation">;</span>
-a<span class="token operator">==</span><span class="token number">2</span> <span class="token operator">&amp;&amp;</span> b<span class="token operator">==</span><span class="token number">7</span>
-</code></pre>
+<p>Remember, <em>boolean expressions</em> are expressions that are evaluated to be <em>TRUE</em> or <em>FALSE</em>.</p>
+<p>Which of the above are boolean expressions?</p>
 <h4 id="summary-of-operators">Summary of Operators</h4>
 <p><strong>Logical Operators</strong>:</p>
 <p><code>&amp;&amp;</code> - AND<br>
 <code>||</code> - OR<br>
-<code>==</code> - EQUALS<br>
-<code>&gt;</code> - GREATER<br>
-<code>&gt;=</code> - GREATER OR EQUAL<br>
-…</p>
+<code>!</code> - NOT</p>
 <p><strong>Bitwise Operators</strong>:<br>
 <code>&amp;</code> - AND<br>
 <code>|</code> - OR<br>
 …</p>
-<p>Note: Just like Python, <code>==</code> is a logical comparison and <code>=</code> is for assignment. However, C allows you to run things like the following example.</p>
+<p>For a complete list of operators (that you may or may not use in this course), consult the <a href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#Expressions-and-Operators">documentation</a>.</p>
 <p><strong>Example</strong></p>
+<p>Things to take note of:</p>
+<ul>
+<li>Just like Python, <code>==</code> is a logical comparison and <code>=</code> is for assignment. However, C allows you to run things like the following example.</li>
+<li>An assignment returns the <em>rightmost</em> value in the assignment.</li>
+<li>The precedence of bitwise operators is <em>higher</em> than logical operators. For a complete list of precedence, consult the <a href="https://en.cppreference.com/w/c/language/operator_precedence">documentation</a>.</li>
+</ul>
 <pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>  
 <span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>  
 <span class="token keyword">int</span> c<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span>  
   
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token operator">=</span>b <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span>  
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Is this going to get printed?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> 
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Is this going to get printed?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
 <span class="token keyword">else</span> 
 <span class="token punctuation">{</span>  
 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Or is this going to get printed?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
