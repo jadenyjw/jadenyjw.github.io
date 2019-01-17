@@ -15,6 +15,7 @@
 <ul>
 <li><a href="#csca48---introduction-to-computer-science-ii">CSCA48 - Introduction to Computer Science II</a>
 <ul>
+<li><a href="#week-1">Week 1</a></li>
 <li><a href="#week-2">Week 2</a></li>
 </ul>
 </li>
@@ -25,13 +26,17 @@
   <div class="stackedit__right">
     <div class="stackedit__html">
       <h1 id="csca48---introduction-to-computer-science-ii">CSCA48 - Introduction to Computer Science II</h1>
-<h2 id="week-2">Week 2</h2>
+<p><strong>Contact Information</strong>:</p>
 <p><em>Name: Yi Jie (Jaden) Wang</em><br>
 <em>Email: jaden.wang [at] <a href="http://mail.utoronto.ca">mail.utoronto.ca</a></em><br>
-<em>Tutorial: TUT 0016 Thursday 9-10AM</em></p>
+<em>Tutorial: TUT 0016 Thursday 9-10AM</em><br>
+<em>Office Hours: IC400A 10-11AM</em></p>
+<h2 id="week-1">Week 1</h2>
+<p>No tutorials first week! Here is a link to a random <a href="https://www.youtube.com/watch?v=6n3pFFPSlW4">video</a>.</p>
+<h2 id="week-2">Week 2</h2>
 <h3 id="logical-and-arithmetic-operators">Logical and Arithmetic Operators</h3>
 <h4 id="bitwise-operators">Bitwise Operators</h4>
-<p>Everything in a computer is represented by <em>bits</em>. What are bits?</p>
+<p>Everything in a computer is represented by sequences of <em>bits</em>. What are bits?</p>
 <p>Example:</p>
 <pre><code>2 = 00000010
 7 = 00000111
@@ -82,6 +87,9 @@
 </code></pre>
 <p>If we used the same numbers, what would the result of <em>bitwise OR</em> be?</p>
 <h4 id="logical-operators">Logical Operators</h4>
+<p>Logical operators were introduced in CSCA08 with Python.</p>
+<p><code>a &amp;&amp; b</code> is equivalent to <code>a and b</code><br>
+<code>a || b</code> is equivalent to <code>a or b</code></p>
 <pre class=" language-c"><code class="prism  language-c">a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>  
 b<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span>  
 c<span class="token operator">=</span>a<span class="token operator">&amp;</span>b<span class="token punctuation">;</span>
@@ -104,10 +112,12 @@ a<span class="token operator">==</span><span class="token number">2</span> <span
 <code>||</code> - OR<br>
 <code>==</code> - EQUALS<br>
 <code>&gt;</code> - GREATER<br>
-<code>&gt;=</code> - GREATER OR EQUAL</p>
-<p><strong>Bitwise Operators</strong><br>
+<code>&gt;=</code> - GREATER OR EQUAL<br>
+…</p>
+<p><strong>Bitwise Operators</strong>:<br>
 <code>&amp;</code> - AND<br>
-<code>|</code> - OR</p>
+<code>|</code> - OR<br>
+…</p>
 <p>Note: Just like Python, <code>==</code> is a logical comparison and <code>=</code> is for assignment. However, C allows you to run things like the following example.</p>
 <p><strong>Example</strong></p>
 <pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>  
@@ -117,7 +127,8 @@ a<span class="token operator">==</span><span class="token number">2</span> <span
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token operator">=</span>b <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span>  
 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Is this going to get printed?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> 
-<span class="token keyword">else</span> <span class="token punctuation">{</span>  
+<span class="token keyword">else</span> 
+<span class="token punctuation">{</span>  
 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Or is this going to get printed?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 </code></pre>
