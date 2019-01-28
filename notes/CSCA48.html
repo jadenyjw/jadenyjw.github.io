@@ -15,9 +15,10 @@
 <ul>
 <li><a href="#csca48---introduction-to-computer-science-ii">CSCA48 - Introduction to Computer Science II</a>
 <ul>
-<li><a href="#week-1">Week 1</a></li>
-<li><a href="#week-2">Week 2</a></li>
+<li><a href="#week-4">Week 4</a></li>
 <li><a href="#week-3">Week 3</a></li>
+<li><a href="#week-2">Week 2</a></li>
+<li><a href="#week-1">Week 1</a></li>
 </ul>
 </li>
 </ul>
@@ -32,8 +33,111 @@
 <em>Email: jaden.wang [at] <a href="http://mail.utoronto.ca">mail.utoronto.ca</a></em><br>
 <em>Tutorial: TUT 0016 MW120 Thursday 9-10AM</em><br>
 <em>Office Hours: Thursday IC400A 10-11AM</em></p>
-<h2 id="week-1">Week 1</h2>
-<p>No tutorials first week! Here is a link to a random <a href="https://www.youtube.com/watch?v=6n3pFFPSlW4">video</a>.</p>
+<h2 id="week-4">Week 4</h2>
+<h3 id="any-questions">Any Questions?</h3>
+<p><strong>Problem 0</strong></p>
+<p>Write a program that does the following:</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">void</span> <span class="token function">count_repeats</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>counts<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token comment">// This function takes a pointer to a string, and a pointer  </span>
+	<span class="token comment">// to an array of ints  </span>
+	<span class="token comment">// It counts how many times each character appears in the input  </span>
+	<span class="token comment">// string and updates that count in the corresponding entry of  </span>
+	<span class="token comment">// the array  </span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>But before you write it, what do you need to know?</p>
+<p><strong>Problem 1</strong></p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token function">stringConcatenate</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>strDest<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>strSrc<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token comment">// This function concatenates strSrc at the end of strDest  </span>
+	<span class="token comment">// Using pointers ;)  </span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>What would happen if we repeatedly called <code>stringConcatenate(str1, str1)</code> multiple times?</p>
+<h2 id="week-3">Week 3</h2>
+<h3 id="compiling-code">Compiling Code</h3>
+<p>During Week 1, you learned to compile your source code with the following command:<br>
+<code>gcc your_program.c</code></p>
+<p>From now on, you are encouraged to start compiling your programs like this:<br>
+<code>gcc -Wall -Werror your_program.c</code></p>
+<p>What do the flags <code>-Wall</code> and <code>-Werror</code> do?</p>
+<p><strong>Example 0</strong></p>
+<p>What would happen if you compiled the following program with both of the commands above?</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span>  </span>
+ 
+<span class="token keyword">float</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token keyword">float</span> x<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	x<span class="token operator">=</span>x<span class="token operator">*</span>x<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token keyword">float</span> y<span class="token punctuation">;</span>  
+	y<span class="token operator">=</span><span class="token number">3.141592</span><span class="token punctuation">;</span>  
+	<span class="token function">square</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<p>So how do we fix this program? We use Google!</p>
+<p><strong>Example 1</strong></p>
+<p>Find the compiler warning that will appear when attempting to compile this program.</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span>  </span>
+  
+<span class="token keyword">float</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token keyword">float</span> x<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	x<span class="token operator">=</span>x<span class="token operator">*</span>x<span class="token punctuation">;</span>  
+	<span class="token keyword">return</span> x<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token keyword">float</span> y<span class="token punctuation">;</span>  
+	y<span class="token operator">=</span><span class="token number">3.141592</span><span class="token punctuation">;</span>  
+	y<span class="token operator">=</span><span class="token function">square</span><span class="token punctuation">(</span><span class="token function">square</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="memory-model-review">Memory Model Review</h3>
+<p>Key facts to remember:</p>
+<ul>
+<li>Every time a variable is declared, a “box” is allocated to store information. That allocated location in memory is then stored.</li>
+<li>Variables are local within the function they are declared in, so each function has its own space in memory.</li>
+</ul>
+<p><strong>Exercise 0</strong></p>
+<p>Draw a memory diagram that illustrates what happens in memory when you run the following snippet of code:</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">int</span> x<span class="token punctuation">;</span> 
+	<span class="token keyword">int</span> y<span class="token punctuation">;</span> 
+	<span class="token keyword">float</span> pi<span class="token punctuation">;</span> 
+	x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span> 
+	y<span class="token operator">=</span>x<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">;</span> 
+	pi<span class="token operator">=</span>y<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> 
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%f\n"</span><span class="token punctuation">,</span>pi<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+</code></pre>
+<p>What will be the final value printed by the program?</p>
+<p><strong>Exercise 1</strong></p>
+<p>Consider the next little program:</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">void</span> <span class="token function">hard_working_function</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	x<span class="token operator">=</span>x<span class="token operator">*</span>x<span class="token punctuation">;</span> 
+	x<span class="token operator">=</span>x<span class="token operator">/</span>x<span class="token punctuation">;</span> 
+	x<span class="token operator">=</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token punctuation">;</span> 
+	x<span class="token operator">=</span>x<span class="token operator">+</span><span class="token number">71</span><span class="token punctuation">;</span> 
+	x<span class="token operator">=</span>x<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">int</span> x<span class="token punctuation">;</span> 
+	x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> 
+	<span class="token function">hard_working_function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+</code></pre>
+<p>What is the final value printed by the program?<br>
+Hint: Draw the memory model diagram.</p>
+<p><strong>Practice Problems For Fun</strong></p>
+<ol>
+<li>Create a program that determines whether or not a string is a palindrome.</li>
+<li>Implement a function that determines whether or not 2 strings are equal.</li>
+</ol>
 <h2 id="week-2">Week 2</h2>
 <h3 id="logical-and-bitwise-operators">Logical and Bitwise Operators</h3>
 <h4 id="bitwise-operators">Bitwise Operators</h4>
@@ -156,89 +260,8 @@ c<span class="token operator">=</span>a<span class="token operator">&amp;</span>
 <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"100 = 10*10\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Any comments on this piece of code?</p>
-<h2 id="week-3">Week 3</h2>
-<h3 id="compiling-code">Compiling Code</h3>
-<p>During Week 1, you learned to compile your source code with the following command:<br>
-<code>gcc your_program.c</code></p>
-<p>From now on, you are encouraged to start compiling your programs like this:<br>
-<code>gcc -Wall -Werror your_program.c</code></p>
-<p>What do the flags <code>-Wall</code> and <code>-Werror</code> do?</p>
-<p><strong>Example 0</strong></p>
-<p>What would happen if you compiled the following program with both of the commands above?</p>
-<pre class=" language-c"><code class="prism  language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span>  </span>
- 
-<span class="token keyword">float</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token keyword">float</span> x<span class="token punctuation">)</span>  
-<span class="token punctuation">{</span>  
-	x<span class="token operator">=</span>x<span class="token operator">*</span>x<span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
-<span class="token punctuation">{</span>  
-	<span class="token keyword">float</span> y<span class="token punctuation">;</span>  
-	y<span class="token operator">=</span><span class="token number">3.141592</span><span class="token punctuation">;</span>  
-	<span class="token function">square</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>
-</code></pre>
-<p>So how do we fix this program? We use Google!</p>
-<p><strong>Example 1</strong></p>
-<p>Find the compiler warning that will appear when attempting to compile this program.</p>
-<pre class=" language-c"><code class="prism  language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span>  </span>
-  
-<span class="token keyword">float</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token keyword">float</span> x<span class="token punctuation">)</span>  
-<span class="token punctuation">{</span>  
-	x<span class="token operator">=</span>x<span class="token operator">*</span>x<span class="token punctuation">;</span>  
-	<span class="token keyword">return</span> x<span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>  
-  
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
-<span class="token punctuation">{</span>  
-	<span class="token keyword">float</span> y<span class="token punctuation">;</span>  
-	y<span class="token operator">=</span><span class="token number">3.141592</span><span class="token punctuation">;</span>  
-	y<span class="token operator">=</span><span class="token function">square</span><span class="token punctuation">(</span><span class="token function">square</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="memory-model-review">Memory Model Review</h3>
-<p>Key facts to remember:</p>
-<ul>
-<li>Every time a variable is declared, a “box” is allocated to store information. That allocated location in memory is then stored.</li>
-<li>Variables are local within the function they are declared in, so each function has its own space in memory.</li>
-</ul>
-<p><strong>Exercise 0</strong></p>
-<p>Draw a memory diagram that illustrates what happens in memory when you run the following snippet of code:</p>
-<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-	<span class="token keyword">int</span> x<span class="token punctuation">;</span> 
-	<span class="token keyword">int</span> y<span class="token punctuation">;</span> 
-	<span class="token keyword">float</span> pi<span class="token punctuation">;</span> 
-	x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span> 
-	y<span class="token operator">=</span>x<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">;</span> 
-	pi<span class="token operator">=</span>y<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> 
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%f\n"</span><span class="token punctuation">,</span>pi<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span> 
-</code></pre>
-<p>What will be the final value printed by the program?</p>
-<p><strong>Exercise 1</strong></p>
-<p>Consider the next little program:</p>
-<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">void</span> <span class="token function">hard_working_function</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-	x<span class="token operator">=</span>x<span class="token operator">*</span>x<span class="token punctuation">;</span> 
-	x<span class="token operator">=</span>x<span class="token operator">/</span>x<span class="token punctuation">;</span> 
-	x<span class="token operator">=</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token punctuation">;</span> 
-	x<span class="token operator">=</span>x<span class="token operator">+</span><span class="token number">71</span><span class="token punctuation">;</span> 
-	x<span class="token operator">=</span>x<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span> 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-	<span class="token keyword">int</span> x<span class="token punctuation">;</span> 
-	x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> 
-	<span class="token function">hard_working_function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span> 
-</code></pre>
-<p>What is the final value printed by the program?<br>
-Hint: Draw the memory model diagram.</p>
-<p><strong>Practice Problems For Fun</strong></p>
-<ol>
-<li>Create a program that determines whether or not a string is a palindrome.</li>
-<li>Implement a function that determines whether or not 2 strings are equal.</li>
-</ol>
+<h2 id="week-1">Week 1</h2>
+<p>No tutorials first week! Here is a link to a random <a href="https://www.youtube.com/watch?v=6n3pFFPSlW4">video</a>.</p>
 
     </div>
   </div>
