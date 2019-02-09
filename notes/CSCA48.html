@@ -15,6 +15,7 @@
 <ul>
 <li><a href="#csca48---introduction-to-computer-science-ii">CSCA48 - Introduction to Computer Science II</a>
 <ul>
+<li><a href="#week-6">Week 6</a></li>
 <li><a href="#week-5">Week 5</a></li>
 <li><a href="#week-4">Week 4</a></li>
 <li><a href="#week-3">Week 3</a></li>
@@ -34,6 +35,74 @@
 <em>Email: jaden.wang [at] <a href="http://mail.utoronto.ca">mail.utoronto.ca</a></em><br>
 <em>Tutorial: TUT 0016 MW120 Thursday 9-10AM</em><br>
 <em>Office Hours: Thursday IC400A 10-11AM</em></p>
+<h2 id="week-6">Week 6</h2>
+<h3 id="dynamic-memory-management">Dynamic Memory Management</h3>
+<p><code>calloc(num, size)</code> - What does this do?</p>
+<p>What are the advantages of <code>calloc</code> over regular arrays?</p>
+<p><strong>Example 1</strong><br>
+Consider the following code:</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token function">newArray</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token keyword">int</span> <span class="token operator">*</span>array<span class="token punctuation">;</span> <span class="token comment">// A pointer! not an array declaration  </span>
+	array<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">calloc</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Get 'size' items large  </span>
+	enough to hold one <span class="token keyword">int</span> each  
+	<span class="token keyword">return</span> array<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token keyword">int</span> size<span class="token punctuation">;</span>  
+	<span class="token keyword">int</span> <span class="token operator">*</span>my_array<span class="token punctuation">;</span>  
+	  
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Please enter the size of the array\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	<span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	  
+	my_array<span class="token operator">=</span><span class="token function">newArray</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>my_array<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span>  
+	<span class="token punctuation">{</span>  
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Out of memory allocating array!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+		<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>  
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">/*
+	Set each ith element to be equal to i in my_array
+	*/</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Note: <code>calloc</code> may return <code>NULL</code>. Always check the return value of <code>calloc</code>.</p>
+<p>Write code to set the <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>i</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">i^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.849108em; vertical-align: 0em;"></span><span class="mord"><span class="mord mathit">i</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.849108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span> element in <code>my_array</code> to <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.65952em; vertical-align: 0em;"></span><span class="mord mathit">i</span></span></span></span></span>?</p>
+<p>Once we are done with our memory, we have to free it. Which of the following is the correct way to free our allocated memory?</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token comment">// Option a)  </span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token function">free</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>my_array<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token comment">// Option b)  </span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token function">free</span><span class="token punctuation">(</span>my_array<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token comment">// Option c)  </span>
+<span class="token function">free</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Example 2</strong></p>
+<p>Consider the following code that allocates a 2D array.</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token function">new2DArray</span><span class="token punctuation">(</span><span class="token keyword">int</span> numRows<span class="token punctuation">,</span> <span class="token keyword">int</span> numColumns<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+	<span class="token keyword">int</span> <span class="token operator">*</span>array<span class="token punctuation">;</span> <span class="token comment">// Still just a pointer!  </span>
+	array<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">calloc</span><span class="token punctuation">(</span>numRows<span class="token operator">*</span>numColumns<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+	<span class="token keyword">return</span> array<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="questions">Questions:</h4>
+<ol>
+<li>How does this look like in computer memory?</li>
+<li>How do we access the element at <code>[i][j]</code> element of <code>array</code> with pointer arithmetic?</li>
+<li>Write code so that the <code>[i][j]</code> entry is equal to <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi>i</mi><mo>+</mo><mn>7</mn><mi>j</mi></mrow><annotation encoding="application/x-tex">3i+ 7j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.74285em; vertical-align: -0.08333em;"></span><span class="mord">3</span><span class="mord mathit">i</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.85396em; vertical-align: -0.19444em;"></span><span class="mord">7</span><span class="mord mathit" style="margin-right: 0.05724em;">j</span></span></span></span></span>.</li>
+</ol>
 <h2 id="week-5">Week 5</h2>
 <h3 id="any-questions">Any Questions?</h3>
 <h3 id="practice-with-compound-data-types">Practice with Compound Data Types</h3>
