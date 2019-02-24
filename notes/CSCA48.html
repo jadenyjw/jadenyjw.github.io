@@ -15,6 +15,7 @@
 <ul>
 <li><a href="#csca48---introduction-to-computer-science-ii">CSCA48 - Introduction to Computer Science II</a>
 <ul>
+<li><a href="#week-7">Week 7</a></li>
 <li><a href="#week-6-happy-valentines-day-❤️">Week 6 (Happy Valentine’s Day ❤️)</a></li>
 <li><a href="#week-5">Week 5</a></li>
 <li><a href="#week-4">Week 4</a></li>
@@ -35,6 +36,88 @@
 <em>Email: jaden.wang [at] <a href="http://mail.utoronto.ca">mail.utoronto.ca</a></em><br>
 <em>Tutorial: TUT 0016 MW120 Thursday 9-10AM</em><br>
 <em>Office Hours: Thursday IC400A 10-11AM</em></p>
+<h2 id="week-7">Week 7</h2>
+<h3 id="program-testingdebugging">Program Testing/Debugging</h3>
+<p><em>20% of the people who submitted Exercise 6 failed the testing.</em></p>
+<p><strong>Example 0:</strong></p>
+<p>Consider the following code that takes in an <code>int[]</code> and <code>size</code> and returns the <strong>largest</strong> number in the array.</p>
+<p>What’s wrong with the following code?<br>
+Hint: There are 4 problems.</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">getLargest</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	largest <span class="token operator">=</span> <span class="token number">0</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> largest<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			largest <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>Example 1:</strong></p>
+<p>Consider the following code that returns the head of the linked list with the nodes from <code>head</code> <strong>reversed</strong>. What’s wrong with the following code?</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token comment">// Node definition</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> node<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+	<span class="token keyword">struct</span> node <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> Node<span class="token punctuation">;</span>
+
+Node<span class="token operator">*</span> <span class="token function">reverse</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	Node <span class="token operator">*</span>prev <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	Node <span class="token operator">*</span>curr <span class="token operator">=</span> head<span class="token punctuation">;</span>
+	Node <span class="token operator">*</span>tmp <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">while</span><span class="token punctuation">(</span>curr <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		tmp <span class="token operator">=</span> curr<span class="token operator">-&gt;</span>next<span class="token punctuation">;</span>
+		tmp<span class="token operator">-&gt;</span>next <span class="token operator">=</span> prev<span class="token punctuation">;</span>
+		prev <span class="token operator">=</span> curr<span class="token punctuation">;</span>
+		curr <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> curr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>Example 2:</strong></p>
+<p>Here’s a simple snippet of code that goes through the numbers 1 to 100 and for each number does the following:</p>
+<ul>
+<li>Print <code>Fizz</code> if divisible by 3</li>
+<li>Print <code>Buzz</code> if divisble by 5</li>
+<li>Print <code>FizzBuzz</code> if divisible by both 3 and 5</li>
+<li>Print the number otherwise</li>
+</ul>
+<p>What’s wrong with the following code?</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Fizz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Buzz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"FizzBuzz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span><span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>Example 3:</strong></p>
+<p>Consider this program that calculates the <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.849108em; vertical-align: 0em;"></span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.849108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span> Fibonacci number. What’s wrong with this code?</p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+		a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+		b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="testing-strategies">Testing Strategies</h4>
+<ul>
+<li>Before testing anything, you want to know what kind of input your program will be receiving. What ranges of values? Will you get invalid input?</li>
+<li>Think of a few cases that will properly represent a “general” case that your program will receive. Implement those tests.</li>
+<li>Think of “edge” cases, which don’t happen as often as your “general” cases but your program has to properly handle those cases as well.</li>
+</ul>
 <h2 id="week-6-happy-valentines-day-❤️">Week 6 (Happy Valentine’s Day ❤️)</h2>
 <h3 id="dynamic-memory-management">Dynamic Memory Management</h3>
 <p><code>calloc(num, size)</code> - What does this do?</p>
