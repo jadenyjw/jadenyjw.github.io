@@ -113,6 +113,23 @@ Node<span class="token operator">*</span> <span class="token function">reverse</
 	<span class="token keyword">return</span> b<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<p><strong>Example 4:</strong></p>
+<p>Debugging and testing skills are also transferable among languages. Consider this <strong>Python</strong> code that determines whether or not <code>strA</code> is a permutation of <code>strB</code>. What’s wrong with this code?</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">def</span> <span class="token function">isPerm</span><span class="token punctuation">(</span>strA<span class="token punctuation">,</span> strB<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token comment"># Initialize a set to keep track of the characters in A</span>
+	chars_in_A <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment"># Add all the characters in A to the set.</span>
+	<span class="token keyword">for</span> char <span class="token keyword">in</span> strA<span class="token punctuation">:</span>
+		<span class="token builtin">set</span><span class="token punctuation">,</span>add<span class="token punctuation">(</span>char<span class="token punctuation">)</span>
+	<span class="token comment"># Go through each character in B.</span>
+	<span class="token keyword">for</span> char <span class="token keyword">in</span> strB<span class="token punctuation">:</span>
+		<span class="token comment"># If we find a character that's not in A</span>
+		<span class="token comment"># We know it's not a permutation.</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>char <span class="token operator">not</span> <span class="token keyword">in</span> chars_in_A<span class="token punctuation">)</span><span class="token punctuation">:</span>
+			<span class="token keyword">return</span> <span class="token boolean">False</span>
+	
+	<span class="token keyword">return</span> <span class="token boolean">True</span>
+</code></pre>
 <h4 id="testing-strategies">Testing Strategies</h4>
 <ul>
 <li>Before testing anything, you want to know what kind of input your program will be receiving. What ranges of values? Will you get invalid input?</li>
