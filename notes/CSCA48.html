@@ -44,7 +44,7 @@
 <p>Consider the following code that takes in an <code>int[]</code> and <code>size</code> and returns the <strong>largest</strong> number in the array.</p>
 <p>What’s wrong with the following code?<br>
 Hint: There are 4 problems.</p>
-<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">getLargest</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">getLargest</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span>
 	largest <span class="token operator">=</span> <span class="token number">0</span>
 	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 		<span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> largest<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -104,7 +104,8 @@ Node<span class="token operator">*</span> <span class="token function">reverse</
 <pre class=" language-c"><code class="prism  language-c"><span class="token keyword">int</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 	<span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
+	<span class="token keyword">int</span> c<span class="token punctuation">;</span>
+	
 	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 		c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
 		a <span class="token operator">=</span> b<span class="token punctuation">;</span>
@@ -120,7 +121,7 @@ Node<span class="token operator">*</span> <span class="token function">reverse</
 	chars_in_A <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 	<span class="token comment"># Add all the characters in A to the set.</span>
 	<span class="token keyword">for</span> char <span class="token keyword">in</span> strA<span class="token punctuation">:</span>
-		<span class="token builtin">set</span><span class="token punctuation">,</span>add<span class="token punctuation">(</span>char<span class="token punctuation">)</span>
+		<span class="token builtin">set</span><span class="token punctuation">.</span>add<span class="token punctuation">(</span>char<span class="token punctuation">)</span>
 	<span class="token comment"># Go through each character in B.</span>
 	<span class="token keyword">for</span> char <span class="token keyword">in</span> strB<span class="token punctuation">:</span>
 		<span class="token comment"># If we find a character that's not in A</span>
