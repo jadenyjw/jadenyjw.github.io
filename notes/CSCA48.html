@@ -17,6 +17,7 @@
 <ul>
 <li><a href="#week-8">Week 8</a></li>
 <li><a href="#week-7">Week 7</a></li>
+<li><a href="#reading-week">Reading Week</a></li>
 <li><a href="#week-6-happy-valentines-day-❤️">Week 6 (Happy Valentine’s Day ❤️)</a></li>
 <li><a href="#week-5">Week 5</a></li>
 <li><a href="#week-4">Week 4</a></li>
@@ -38,6 +39,36 @@
 <em>Tutorial: TUT 0016 MW120 Thursday 9-10AM</em><br>
 <em>Office Hours: Thursday IC400A 10-11AM</em></p>
 <h2 id="week-8">Week 8</h2>
+<h3 id="review">Review</h3>
+<p><strong>Any questions on time complexity and BSTs?</strong></p>
+<p><strong>Useful Resource:</strong> <a href="http://bigocheatsheet.com/">http://bigocheatsheet.com/</a></p>
+<p><strong>Midterm Question 10</strong></p>
+<p>It’s feeding time for the Peekemons! You need to know which of them are super hungry so you can feed those first.</p>
+<p>You decide to write a function that will <em>return a list of the PeekeMons whose hunger level is greater than a given threshold</em>.</p>
+<p>However, you <em>do not want to duplicate the PeekeMon data at all</em>.</p>
+<p><strong>a)</strong> In no more than 5 steps, describe the process you will implement to solve this task.</p>
+<p><strong>b)</strong> Draw a diagram that illustrates how the list returned by your function works.</p>
+<p><strong>Demonstration of Quicksort</strong></p>
+<ul>
+<li>Initialize an array with 1000000 (one million) integers</li>
+<li>Fill it with random numbers (use drand48())</li>
+<li>Sort with the built-in qsort() from stdlib</li>
+<li>Time your program with <code>time ./a.out</code>, on UNIX systems.</li>
+</ul>
+<p>Signature of <code>qsort</code>:<br>
+<code>void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*))</code><br>
+Signature of <code>compare:</code><br>
+<code>int compare (const void * a, const void * b)</code></p>
+<p><strong>Complete P4 on Unit 3 Notes</strong></p>
+<p><strong>a)</strong> Design the data representation for patients.<br>
+<strong>b)</strong> Design the core of the triage patient management system.<br>
+<strong>c)</strong> Implement and test your solution!</p>
+<p><strong>Optional Problems</strong></p>
+<ol>
+<li>Last class, we dealt with reversing a linked list. This time, reverse a linked list, but only between the <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>a</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">a^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.849108em; vertical-align: 0em;"></span><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.849108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span> and <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>b</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">b^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.849108em; vertical-align: 0em;"></span><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.849108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span> nodes.</li>
+<li>Given a linked list of integers, determine if it is monotonic, or neither. A linked list is monotonic if and only if all consecutive integers are either non-decreasing or non-increasing.</li>
+</ol>
+<h2 id="week-7">Week 7</h2>
 <h3 id="program-testingdebugging">Program Testing/Debugging</h3>
 <p><em>20% of the people who submitted Exercise 6 failed the testing.</em></p>
 <p><strong>Example 0:</strong></p>
@@ -137,8 +168,8 @@ Node<span class="token operator">*</span> <span class="token function">reverse</
 <li>Think of a few cases that will properly represent a “general” case that your program will receive. Implement those tests.</li>
 <li>Think of “edge” cases, which don’t happen as often as your “general” cases but your program has to properly handle those cases as well.</li>
 </ul>
-<h2 id="week-7">Week 7</h2>
-<p>Reading Week!</p>
+<h2 id="reading-week">Reading Week</h2>
+<p>No classes!</p>
 <h2 id="week-6-happy-valentines-day-❤️">Week 6 (Happy Valentine’s Day ❤️)</h2>
 <h3 id="dynamic-memory-management">Dynamic Memory Management</h3>
 <p><code>calloc(num, size)</code> - What does this do?</p>
