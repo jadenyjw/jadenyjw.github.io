@@ -1,0 +1,13 @@
+body {
+	background-color: pink;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.blink {
+  animation: blinker 0.3s linear infinite;
+  color: #ff1493
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
